@@ -1,0 +1,85 @@
+---
+const { timeline } = Astro.props;
+---
+
+<section class="timeline">
+  {timeline.map((item: any) => (
+    <div class="entry">
+      <div class="dot" />
+      <div class="content">
+        <header>
+          <h3>{item.role}</h3>
+          <span class="company">{item.company}</span>
+          <span class="period">{item.period}</span>
+        </header>
+
+        <ul>
+          {item.description.map((point: any) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  ))}
+</section>
+
+<style>
+.timeline {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.entry {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  border-radius: 50%;
+  margin-top: 0.4rem;
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 1rem;
+  bottom: -2rem;
+  width: 1px;
+  background: currentColor;
+  opacity: 0.2;
+}
+
+.entry:last-child::before {
+  display: none;
+}
+
+header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.company {
+  font-weight: 500;
+  display: block;
+}
+
+.period {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1rem;
+}
+
+li {
+  list-style: disc;
+}
+</style>

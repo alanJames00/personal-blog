@@ -1,37 +1,16 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: "About Me"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+I'm a software engineer who lives for that **"Hell, yeah moment"**. I operate from **first principles** and spend my free time reading and implementing foundational computer science papers. Given the breadth of the areas I'm usually drawn and researched on, I've had the joy of rediscovering familiar systems as entirely new once you strip them down to their axioms—and rebuilding them better
 
-![Astro Paper](public/astropaper-og.jpg)
-
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
-
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
-
-## Features
-
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
-
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
-
-and so much more.
-
-## Show your support
-
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+My primary line of work is engineering and building complex backend systems. I've professionally worked with startups, with areas following, but not limited to:
+1. Microservice architecture
+2. Event-driven systems with RabbitMQ
+3. Golang and Node.js With Typescript
+4. Inter-service and client boundary comms with gRPC
+5. Database schema design and zero downtime migrations
+6. Large scale migrations of legacy services from Node.js to Golang for better perf and cost savings
+7. Improvement on LLM based conversational systems by adding better context management and model swapping capabilities
+8. So many more...

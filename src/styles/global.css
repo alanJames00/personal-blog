@@ -5,7 +5,7 @@
 
 :root,
 html[data-theme="light"] {
-  --background: #fdfdfd;
+  --background: #fae0a1;
   --foreground: #282728;
   --accent: #006cac;
   --muted: #e6e6e6;
@@ -15,7 +15,7 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --background: #212737;
   --foreground: #eaedf3;
-  --accent: #ff6b01;
+  --accent: #9e72ce;
   --muted: #343f60;
   --border: #ab4b08;
 }
