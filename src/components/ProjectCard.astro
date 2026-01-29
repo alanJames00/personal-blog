@@ -1,0 +1,33 @@
+---
+import { slugifyStr } from "@/utils/slugify";
+
+type Props = {
+    title: string;
+    description: string;
+    tags: string[];
+    repoUrl: string;
+} 
+
+
+const { title, description, tags, repoUrl } = Astro.props;
+---
+
+<li class="my-6">
+  <a
+    href={repoUrl}
+    class:list={[
+      "inline-block text-lg font-medium text-accent",
+      "decoration-dashed underline-offset-4 hover:underline",
+      "focus-visible:no-underline focus-visible:underline-offset-0",
+    ]}
+  >
+    <h2
+      style={{ viewTransitionName: slugifyStr(title.replaceAll(".", "-")) }}
+    >
+      {title}
+    </h2>
+  </a>
+  <p>{description}</p>
+  <p>{tags.join(" | ")}</p>
+  <a href={repoUrl} target="_blank">View on GitHub</a>
+</li>
