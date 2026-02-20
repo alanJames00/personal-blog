@@ -1,8 +1,8 @@
 export const SITE = {
   website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
   author: "Alan James",
-  profile: "https://satnaing.dev/",
-  desc: "My personal thoughts on engineering, side projects and views",
+  profile: "https://alan-james.com/",
+  desc: "My personal thoughts on engineering, side projects and views on life",
   title: "Alan's Blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
@@ -12,7 +12,7 @@ export const SITE = {
   showArchives: true,
   showBackButton: true, // show back button in post detail
   editPost: {
-    enabled: true,
+    enabled: false,
     text: "Edit page",
     url: "https://github.com/satnaing/astro-paper/edit/main/",
   },
