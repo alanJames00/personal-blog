@@ -1,3 +1,6 @@
+// Import animation function
+import { toggleThemeWithAnimation } from "./theme-toggle";
+
 // Constants
 const THEME = "theme";
 const LIGHT = "light";
@@ -56,6 +59,14 @@ function reflectPreference(): void {
 if (window.theme) {
   window.theme.setPreference = setPreference;
   window.theme.reflectPreference = reflectPreference;
+  // Ensure setTheme also updates local themeValue
+  const originalSetTheme = window.theme.setTheme;
+  if (originalSetTheme) {
+    window.theme.setTheme = (val: string) => {
+      themeValue = val;
+      originalSetTheme(val);
+    };
+  }
 } else {
   window.theme = {
     themeValue,
@@ -76,10 +87,11 @@ function setThemeFeature(): void {
   reflectPreference();
 
   // now this script can find and listen for clicks on the control
+  // Use animated theme toggle for smooth circular reveal effect
   document.querySelector("#theme-btn")?.addEventListener("click", () => {
-    themeValue = themeValue === LIGHT ? DARK : LIGHT;
-    window.theme?.setTheme(themeValue);
-    setPreference();
+    // The animation function will handle the theme toggle and update themeValue
+    // through window.theme.setTheme(), which now syncs with local themeValue
+    toggleThemeWithAnimation();
   });
 }
 
