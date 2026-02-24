@@ -4,7 +4,7 @@ pubDatetime: 2026-02-16T12:00:00Z
 title: Stop Guessing About Cache Headers - How Browsers Really Handle Caching 
 slug: stop-guessing-about-cache-headers
 featured: true 
-draft: false
+draft: true
 tags:
   - caching
   - http
@@ -14,10 +14,12 @@ tags:
 description: "Learn how browsers really handle caching and how to use cache headers to your advantage.This article goes through the different cache headers and practically demonstrate with a test server and a client."
 ---
 
+
 Browser Caching is one of the most misunderstood parts of web. Many engineers add `Cache-Control: no-cache` to their responses to prevent caching. Some tweak the `max-age` values until they seem fast enough for them. But under the hood, browser caching is not random or magical — it is a deterministic system governed by strict HTTP rules. The objective of this article is to pratically demonstrate how browsers handle caching and how to use cache headers to your advantage.
 
 **Note**: All the demonstrations are done with a express.js server serving static files and api responses. You can find the code [here](https://github.com/alanjames007/cache-headers-demo).
 
+![Caching Diagram](https://blog-cdn.alan-james.com/images/browser-caching/browser-caching-blog-cover.webp)
 
 ## What assets are cached?
 
@@ -52,20 +54,23 @@ now the browser will cache the response for 120 seconds.
 **Demo**:
 See the section: `1. Cached API` in the [demo](https://github.com/alanjames007/cache-headers-demo).
 
-First request:
+**First request**:
 ```
 Response JSON: {"message":"This can be cached","timestamp":"2026-02-16T14:25:49.925Z"}
 ```
 
-Second request - made within 10 seconds TTL:
+**Second request - made within 10 seconds TTL**:
 ```
 Response JSON: {"message":"This can be cached","timestamp":"2026-02-16T14:25:49.925Z"}
 ```
+You can see that the response is the same as the first request. This is because the browser cached the response for 10 seconds.
 
-Third request - made after 10 seconds TTL:
+**Third request - made after 10 seconds TTL**:
 ```
 Response JSON: {"message":"This can be cached","timestamp":"2026-02-16T14:26:12.305Z"}
 ```
+
+You can see that the response is different from the first and second requests. This is because the browser did not find the response in the cache and had to make a new request to the server, since the TTL has expired.
 
 ### 4. Other cachable
 
