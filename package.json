@@ -10,7 +10,8 @@
     "astro": "astro",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "rm -rf dist && npm run build && npx wrangler pages deploy dist --project-name personal-blog"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",

@@ -23,28 +23,37 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
     <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Hi, I'm Alan James
-      </h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="inline-block"
-        aria-label="rss feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
+      <div class="flex items-center justify-center">
+        <img
+          src="https://blog-cdn.alan-james.com/images/profile/112971020.jpeg"
+          alt="Alan James"
+          class="h-auto w-1/6"
         />
-        <span class="sr-only">RSS Feed</span>
-      </a>
-
+        <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
+          Hi, I'm Alan James
+        </h1>
+        <a
+          target="_blank"
+          href="/rss.xml"
+          class="inline-block"
+          aria-label="rss feed"
+          title="RSS Feed"
+        >
+          <IconRss
+            width={20}
+            height={20}
+            class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
+          />
+          <span class="sr-only">RSS Feed</span>
+        </a>
+      </div>
       <p>
-       I'm an engineer who builds for the real world. Currently, working with a startup called SampurnaKart.
-       Off-duty, I tinker with low-level projects like protocol parsers, network services, or simple databases. "Don't reinvent the wheel"? Nah, that's how you really learn.
-       Essentially, I work on things for that "hell yeah" moment. It turns to be useful for others too sometimes. Stick around for articles on these topics.
+        I'm an engineer who builds for the real world. Currently, working with a
+        startup called SampurnaKart. Off-duty, I tinker with low-level projects
+        like protocol parsers, network services, or simple databases. "Don't
+        reinvent the wheel"? Nah, that's how you really learn. Essentially, I
+        work on things for that "hell yeah" moment. It turns to be useful for
+        others too sometimes. Stick around for articles on these topics.
       </p>
       <p class="mt-2">
         Continue reading my blog posts or learn more about me professionally at
