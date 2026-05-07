@@ -9,12 +9,24 @@ type Props = {
 } & HTMLAttributes<"footer">;
 
 const { noMarginTop = false, class: className, ...attrs } = Astro.props;
+
+const footerImageUrl = "https://blog-cdn.alan-james.com/images/profile/footer-img.png"
 ---
 
 <footer
   class:list={["app-layout", { "mt-auto": !noMarginTop }, className]}
   {...attrs}
 >
+  <!-- Image added here for large width -->
+  <div class="w-full">
+    <img 
+      src={footerImageUrl} 
+      alt="Footer illustration" 
+      class="w-full h-4 object-cover object-center rounded-lg block" 
+      style={{ height: '185px' }}
+    />
+  </div> 
+
   <div
     class:list={[
       "py-6 sm:py-4",

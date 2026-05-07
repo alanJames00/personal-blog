@@ -17,12 +17,22 @@ const posts = await getCollection("blog");
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+
+const heroImageUrl = "https://blog-cdn.alan-james.com/images/profile/website-hero.webp"
 ---
 
 <Layout>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
     <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
+
+      <img 
+      src={heroImageUrl} 
+      alt="Alan James working on a project" 
+      class="rounded-xl w-full h-full mb-4 object-cover"
+      loading="eager" 
+    />
+
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
         Hi, I'm Alan James
       </h1>
